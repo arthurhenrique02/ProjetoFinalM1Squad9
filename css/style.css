@@ -4,3 +4,20 @@
     font-family: 'Poppins', sans-serif;   
     box-sizing: border-box; 
 }
+
+body {
+    background-image: url("/assets/1200x630.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    margin: 100px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+    background: rgba(5, 5, 29, 0.6);
+    border: 2px solid rgba(19, 72, 132, 0.2);
+    backdrop-filter: blur(20px);
+}

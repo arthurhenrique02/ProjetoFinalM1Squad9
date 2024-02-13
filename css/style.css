@@ -21,3 +21,20 @@ body {
     border: 2px solid rgba(19, 72, 132, 0.2);
     backdrop-filter: blur(20px);
 }
+
+.container h1{
+    font-size: 25px;
+    color: #f0f0f0;
+    font-weight: 600;
+    padding-bottom: 30px;
+}
+
+.questionario{
+    padding: 20px 0;
+}
+
+.questionario h2{
+    font-size: 18px;
+    color: #f0f0f0;
+    font-weight: 600;
+}

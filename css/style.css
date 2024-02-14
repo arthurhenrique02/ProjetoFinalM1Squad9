@@ -1,40 +1,54 @@
-* {     
-    margin: 0; 
-    padding: 0;   
-    font-family: 'Poppins', sans-serif;   
-    box-sizing: border-box; 
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
 
 body {
-    background-image: url("/assets/1200x630.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url("/assets/1200x630.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container {
-    width: 90%;
-    max-width: 500px;
-    margin: 100px auto 0;
-    border-radius: 10px;
-    padding: 30px;
-    background: rgba(5, 5, 29, 0.6);
-    border: 2px solid rgba(19, 72, 132, 0.2);
-    backdrop-filter: blur(20px);
+  width: 90%;
+  max-width: 500px;
+  margin: 100px auto 0;
+  border-radius: 10px;
+  padding: 30px;
+  background: rgba(5, 5, 29, 0.6);
+  border: 2px solid rgba(19, 72, 132, 0.2);
+  backdrop-filter: blur(20px);
 }
 
-.container h1{
-    font-size: 25px;
-    color: #f0f0f0;
-    font-weight: 600;
-    padding-bottom: 30px;
+.container h1 {
+  font-size: 25px;
+  color: #f0f0f0;
+  font-weight: 600;
+  padding-bottom: 30px;
 }
 
-.questionario{
-    padding: 20px 0;
+.questionario {
+  padding: 20px 0;
 }
 
-.questionario h2{
-    font-size: 18px;
-    color: #f0f0f0;
-    font-weight: 600;
+.questionario h2 {
+  font-size: 18px;
+  color: #f0f0f0;
+  font-weight: 600;
+}
+
+.botao {
+  background: #f0f0f0;
+  color: #333;
+  font-weight: 500;
+  width: 100%;
+  border: 1px solid #333;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: left;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
 }

@@ -124,6 +124,17 @@ function mostrarPontuacao(elementoPergunta, botaoProximo) {
   botaoProximo.style.display = "block";
 }
 
+
+// adicionando o evento para jogar novamete ao finalizar as perguntas
+botaoProximo.addEventListener("click", () => {
+  if (botaoProximo.innerHTML === "Jogar novamente"){
+      iniciarQuestionario();
+  } else if (indicePerguntaAtual < perguntas.length){
+      lidarComBotaoProximo();
+  }
+})
+
+
 // inicializar uma pergunta
 mostrarPergunta(
   perguntas,
@@ -131,3 +142,5 @@ mostrarPergunta(
   elementoPergunta,
   botoesResposta
 );
+
+iniciarQuestionario();

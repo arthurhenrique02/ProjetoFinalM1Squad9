@@ -103,3 +103,11 @@ function lidarComBotaoProximo() {
     mostrarPontuacao(elementoPergunta, botaoProximo);
   }
 }
+
+// inicializar uma pergunta
+mostrarPergunta(
+  perguntas,
+  indicePerguntaAtual,
+  elementoPergunta,
+  botoesResposta
+);

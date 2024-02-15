@@ -29,6 +29,14 @@ perguntas.push({
   ],
 });
 
+// Função para iniciar o questionario
+function iniciarQuestionario() {
+  indicePerguntaAtual = 0;
+  pontuacao = 0;
+  botaoProximo.innerHTML = 'Próximo';
+  mostrarPergunta(perguntas, indicePerguntaAtual, elementoPergunta, botoesResposta);
+}
+
 // Função para mostrar a pergunta atual
 function mostrarPergunta(
   perguntas,

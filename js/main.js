@@ -59,3 +59,23 @@ function resetarEstado(botoesResposta, botaoProximo) {
     botoesResposta.removeChild(botoesResposta.firstChild);
   }
 }
+
+// ===== Selectionar respostas =====
+// Função para tratar a seleção de resposta
+function selecionarResposta(e, botoesResposta, botaoProximo) {
+  const botaoSelecionado = e.target;
+  const isCorreto = botaoSelecionado.dataset.acertou === "true";
+  if (isCorreto) {
+    botaoSelecionado.classList.add("acertou");
+    pontuacao++;
+  } else {
+    botaoSelecionado.classList.add("errou");
+  }
+  Array.from(botoesResposta.children).forEach((botao) => {
+    if (botao.dataset.acertou === "true") {
+      botao.classList.add("acertou");
+    }
+    botao.disabled = true;
+  });
+  botaoProximo.style.display = "block";
+}

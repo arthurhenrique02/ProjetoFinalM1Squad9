@@ -67,3 +67,11 @@ body {
     cursor: pointer;
     display: none;
 }
+
+.acertou {
+    border: 3px solid #02c456;
+}
+
+.errou {
+    border: 3px solid #aa0202;
+}

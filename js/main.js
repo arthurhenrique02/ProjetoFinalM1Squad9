@@ -88,10 +88,11 @@ function selecionarResposta(e, botoesResposta, botaoProximo) {
 }
 
 // vai para a proxima pergunta
-function lidarComBotaoProximo() {
+function mostrarProximaPerguntaOuPontuacao() {
   // incrementa o indice da pergunta atual
   indicePerguntaAtual++;
-  // checa se é a ultima pergunta
+  // checa se não é a ultima pergunta, caso não seja mostra a proxima pergunta
+  // caso contrário, mostra a pontuação
   if (indicePerguntaAtual < perguntas.length) {
     mostrarPergunta(
       perguntas,
@@ -102,6 +103,17 @@ function lidarComBotaoProximo() {
   } else {
     mostrarPontuacao(elementoPergunta, botaoProximo);
   }
+}
+
+// mostra a quantidade de acertos do usuário
+function mostrarPontuacao(elementoPergunta, botaoProximo) {
+  // esconde os botoes de resposta e botão de próximo
+  resetarEstado(botoesResposta, botaoProximo);
+  // mostra a pontuação
+  elementoPergunta.innerHTML = `Você pontuação foi ${pontuacao} de ${perguntas.length}!`;
+  // muda o texto do botão de próximo
+  botaoProximo.innerHTML = "Jogar novamente";
+  botaoProximo.style.display = "block";
 }
 
 // inicializar uma pergunta

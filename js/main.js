@@ -5,6 +5,8 @@ const elementoPergunta = document.getElementById("pergunta");
 const botoesResposta = document.getElementById("botoes-resposta");
 const botaoProximo = document.getElementById("proximo-botao");
 
+// ===== Adicionar perguntas =====
+// adiciona um objeto contendo as keys 'pergunta' e 'respostas' a lista de perguntas
 perguntas.push({
   pergunta: "Qual o nome do melhor amigo de Chris?",
   respostas: [
@@ -34,11 +36,15 @@ function mostrarPergunta(
   elementoPergunta,
   botoesResposta
 ) {
+  // resetar html atual
   resetarEstado(botoesResposta, botaoProximo);
+  // pegar a pergunta atual
   let perguntaAtual = perguntas[indicePerguntaAtual];
   let numeroPergunta = indicePerguntaAtual + 1;
+  // alterar h2 (titulo da pergunta)
   elementoPergunta.innerHTML = numeroPergunta + ". " + perguntaAtual.pergunta;
 
+  // criar botões de resposta
   perguntaAtual.respostas.forEach((resposta) => {
     const botao = document.createElement("button");
     botao.innerHTML = resposta.texto;
@@ -53,6 +59,7 @@ function mostrarPergunta(
   });
 }
 
+// Esconde o botão de próximo e reseta os botoes de resposta
 function resetarEstado(botoesResposta, botaoProximo) {
   botaoProximo.style.display = "none";
   while (botoesResposta.firstChild) {
@@ -78,4 +85,21 @@ function selecionarResposta(e, botoesResposta, botaoProximo) {
     botao.disabled = true;
   });
   botaoProximo.style.display = "block";
+}
+
+// vai para a proxima pergunta
+function lidarComBotaoProximo() {
+  // incrementa o indice da pergunta atual
+  indicePerguntaAtual++;
+  // checa se é a ultima pergunta
+  if (indicePerguntaAtual < perguntas.length) {
+    mostrarPergunta(
+      perguntas,
+      indicePerguntaAtual,
+      elementoPergunta,
+      botoesResposta
+    );
+  } else {
+    mostrarPontuacao(elementoPergunta, botaoProximo);
+  }
 }

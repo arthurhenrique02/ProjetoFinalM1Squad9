@@ -29,6 +29,7 @@ body {
   padding-bottom: 30px;
 }
 
+/* questionarios */
 .questionario {
   padding: 20px 0;
 }
@@ -39,6 +40,7 @@ body {
   font-weight: 600;
 }
 
+/* botoes */
 .botao {
   background: #f0f0f0;
   color: #333;
@@ -51,4 +53,17 @@ body {
   border-radius: 15px;
   cursor: pointer;
   transition: all 0.3s;
+}
+
+#proximo-botao {
+    background: #6b6675;
+    color: #f0f0f0;
+    font-weight: 500;
+    width: 150px;
+    border: 0;
+    padding: 10px;
+    margin: 20px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
 }

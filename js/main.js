@@ -53,6 +53,13 @@ function mostrarPergunta(
   });
 }
 
+mostrarPergunta(
+  perguntas, 
+  indicePerguntaAtual, 
+  elementoPergunta, 
+  botoesResposta
+  );
+
 function resetarEstado(botoesResposta, botaoProximo) {
   botaoProximo.style.display = "none";
   while (botoesResposta.firstChild) {

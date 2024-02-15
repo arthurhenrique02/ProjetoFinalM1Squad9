@@ -29,6 +29,7 @@ perguntas.push({
   ],
 });
 
+// ===== Mostrar dados (perguntas e pontuação) =====
 // Função para mostrar a pergunta atual
 function mostrarPergunta(
   perguntas,
@@ -59,6 +60,18 @@ function mostrarPergunta(
   });
 }
 
+// mostra a quantidade de acertos do usuário
+function mostrarPontuacao(elementoPergunta, botaoProximo) {
+  // esconde os botoes de resposta e botão de próximo
+  resetarEstado(botoesResposta, botaoProximo);
+  // mostra a pontuação
+  elementoPergunta.innerHTML = `Você pontuação foi ${pontuacao} de ${perguntas.length}!`;
+  // muda o texto do botão de próximo
+  botaoProximo.innerHTML = "Jogar novamente";
+  botaoProximo.style.display = "block";
+}
+
+// ===== Resetar estado da tela =====
 // Esconde o botão de próximo e reseta os botoes de resposta
 function resetarEstado(botoesResposta, botaoProximo) {
   botaoProximo.style.display = "none";
@@ -87,7 +100,7 @@ function selecionarResposta(e, botoesResposta, botaoProximo) {
   botaoProximo.style.display = "block";
 }
 
-// vai para a proxima pergunta
+// vai para a proxima pergunta ou mostra a pontuação do usuário
 function mostrarProximaPerguntaOuPontuacao() {
   // incrementa o indice da pergunta atual
   indicePerguntaAtual++;
@@ -103,17 +116,6 @@ function mostrarProximaPerguntaOuPontuacao() {
   } else {
     mostrarPontuacao(elementoPergunta, botaoProximo);
   }
-}
-
-// mostra a quantidade de acertos do usuário
-function mostrarPontuacao(elementoPergunta, botaoProximo) {
-  // esconde os botoes de resposta e botão de próximo
-  resetarEstado(botoesResposta, botaoProximo);
-  // mostra a pontuação
-  elementoPergunta.innerHTML = `Você pontuação foi ${pontuacao} de ${perguntas.length}!`;
-  // muda o texto do botão de próximo
-  botaoProximo.innerHTML = "Jogar novamente";
-  botaoProximo.style.display = "block";
 }
 
 // inicializar uma pergunta

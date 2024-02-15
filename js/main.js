@@ -132,11 +132,12 @@ function mostrarProximaPerguntaOuPontuacao() {
 }
 
 // adicionando o evento para jogar novamete ao finalizar as perguntas
+// ou ir para a proxima pergunta
 botaoProximo.addEventListener("click", () => {
   if (botaoProximo.innerHTML === "Jogar novamente") {
     iniciarQuestionario();
   } else if (indicePerguntaAtual < perguntas.length) {
-    lidarComBotaoProximo();
+    mostrarProximaPerguntaOuPontuacao();
   }
 });
 

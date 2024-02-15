@@ -29,6 +29,19 @@ perguntas.push({
   ],
 });
 
+// Função para iniciar o questionario
+function iniciarQuestionario() {
+  indicePerguntaAtual = 0;
+  pontuacao = 0;
+  botaoProximo.innerHTML = "Próximo";
+  mostrarPergunta(
+    perguntas,
+    indicePerguntaAtual,
+    elementoPergunta,
+    botoesResposta
+  );
+}
+
 // ===== Mostrar dados (perguntas e pontuação) =====
 // Função para mostrar a pergunta atual
 function mostrarPergunta(
@@ -118,6 +131,15 @@ function mostrarProximaPerguntaOuPontuacao() {
   }
 }
 
+// adicionando o evento para jogar novamete ao finalizar as perguntas
+botaoProximo.addEventListener("click", () => {
+  if (botaoProximo.innerHTML === "Jogar novamente") {
+    iniciarQuestionario();
+  } else if (indicePerguntaAtual < perguntas.length) {
+    lidarComBotaoProximo();
+  }
+});
+
 // inicializar uma pergunta
 mostrarPergunta(
   perguntas,
@@ -125,3 +147,5 @@ mostrarPergunta(
   elementoPergunta,
   botoesResposta
 );
+
+iniciarQuestionario();

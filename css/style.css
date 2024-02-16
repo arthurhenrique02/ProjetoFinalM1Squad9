@@ -92,3 +92,7 @@ body {
 .errou {
     border: 3px solid #aa0202;
 }
+
+.center-text {
+    text-align: center;
+}

@@ -7,60 +7,60 @@ const botaoProximo = document.getElementById("proximo-botao");
 
 // ===== Adicionar perguntas =====
 // adiciona um objeto contendo as keys 'pergunta' e 'respostas' a lista de perguntas
-perguntas.push({
-  pergunta: "Qual o nome do melhor amigo de Chris?",
-  respostas: [
-    { texto: "Greg", acertou: true },
-    { texto: "Karuzo", acertou: false },
-    { texto: "Monk", acertou: false },
-    { texto: "Kill Moves", acertou: false },
-    { texto: "Joey", acertou: false },
-  ],
-});
-
-perguntas.push({
-  pergunta: "Em qual cidade a série “Everybody Hates Chris” se passa?",
-  respostas: [
-    { texto: "Brooklyn", acertou: false },
-    { texto: "Los Angeles", acertou: false },
-    { texto: "Miami", acertou: false },
-    { texto: "Nova York", acertou: true },
-    { texto: "Chicago", acertou: false },
-  ],
-});
-
-perguntas.push({
-  pergunta: "Quem é o narrador da série Everybody Hates Chris?",
-  respostas: [
-    { texto: "Terry Crews", acertou: false },
-    { texto: "Tichina Arnold", acertou: false },
-    { texto: "Tequan Richmond", acertou: false },
-    { texto: "Imani Hakim", acertou: false },
-    { texto: "Chris Rock", acertou: true },
-  ],
-});
-
-perguntas.push({
-  pergunta: "Qual é o nome do colégio que Chris frequenta na série durante seu High School?",
-  respostas: [
-    { texto: "Corleone", acertou: false },
-    { texto: "Tattaglia", acertou: true },
-    { texto: "Bed-Stuy Preparatory", acertou: false },
-    { texto: "Brooklyn Academy", acertou: false },
-    { texto: "East Flatbush Middle School", acertou: false },
-  ],
-});
-
-perguntas.push({
-  pergunta: "Quem é o valentão que sempre persegue Chris na série Everybody Hates Chris?",
-  respostas: [
-    { texto: "Malvo", acertou: false },
-    { texto: "Risky", acertou: false },
-    { texto: "Doc c", acertou: false },
-    { texto: "Kill Moves", acertou: false },
-    { texto: "Caruso", acertou: true },
-  ],
-});
+perguntas.push(
+  {
+    pergunta: "Qual o nome do melhor amigo de Chris?",
+    respostas: [
+      { texto: "Greg", acertou: true },
+      { texto: "Karuzo", acertou: false },
+      { texto: "Monk", acertou: false },
+      { texto: "Kill Moves", acertou: false },
+      { texto: "Joey", acertou: false },
+    ],
+  },
+  {
+    pergunta: "Em qual cidade a série “Everybody Hates Chris” se passa?",
+    respostas: [
+      { texto: "Brooklyn", acertou: false },
+      { texto: "Los Angeles", acertou: false },
+      { texto: "Miami", acertou: false },
+      { texto: "Nova York", acertou: true },
+      { texto: "Chicago", acertou: false },
+    ],
+  },
+  {
+    pergunta: "Quem é o narrador da série Everybody Hates Chris?",
+    respostas: [
+      { texto: "Terry Crews", acertou: false },
+      { texto: "Tichina Arnold", acertou: false },
+      { texto: "Tequan Richmond", acertou: false },
+      { texto: "Imani Hakim", acertou: false },
+      { texto: "Chris Rock", acertou: true },
+    ],
+  },
+  {
+    pergunta:
+      "Qual é o nome do colégio que Chris frequenta na série durante seu High School?",
+    respostas: [
+      { texto: "Corleone", acertou: true },
+      { texto: "Tattaglia", acertou: false },
+      { texto: "Bed-Stuy Preparatory", acertou: false },
+      { texto: "Brooklyn Academy", acertou: false },
+      { texto: "East Flatbush Middle School", acertou: false },
+    ],
+  },
+  {
+    pergunta:
+      "Quem é o valentão que sempre persegue Chris na série Everybody Hates Chris?",
+    respostas: [
+      { texto: "Malvo", acertou: false },
+      { texto: "Risky", acertou: false },
+      { texto: "Doc c", acertou: false },
+      { texto: "Kill Moves", acertou: false },
+      { texto: "Caruso", acertou: true },
+    ],
+  }
+);
 
 // Função para iniciar o questionario
 function iniciarQuestionario() {
@@ -111,7 +111,7 @@ function mostrarPontuacao(elementoPergunta, botaoProximo) {
   // esconde os botoes de resposta e botão de próximo
   resetarEstado(botoesResposta, botaoProximo);
   // mostra a pontuação
-  elementoPergunta.innerHTML = `Você pontuação foi ${pontuacao} de ${perguntas.length}!`;
+  elementoPergunta.innerHTML = `Sua pontuação foi ${pontuacao} de ${perguntas.length}!`;
   // muda o texto do botão de próximo
   botaoProximo.innerHTML = "Jogar novamente";
   botaoProximo.style.display = "block";

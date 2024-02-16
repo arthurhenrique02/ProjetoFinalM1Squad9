@@ -80,6 +80,10 @@ body {
     cursor: pointer;
     display: none;
 }
+#proximo-botao:hover {
+    background: #f0f0f0;
+    color: #333;
+}
 
 .acertou {
     border: 3px solid #02c456;

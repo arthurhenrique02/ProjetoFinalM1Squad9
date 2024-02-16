@@ -136,6 +136,9 @@ function selecionarResposta(e, botoesResposta, botaoProximo) {
     pontuacao++;
   } else {
     botaoSelecionado.classList.add("errou");
+    // Se a resposta estiver errada, mostre a pontuação e termine o jogo
+    mostrarPontuacao(elementoPergunta, botaoProximo);
+    return; // termina a execução da função aqui
   }
   Array.from(botoesResposta.children).forEach((botao) => {
     if (botao.dataset.acertou === "true") {
@@ -145,6 +148,7 @@ function selecionarResposta(e, botoesResposta, botaoProximo) {
   });
   botaoProximo.style.display = "block";
 }
+
 
 // vai para a proxima pergunta ou mostra a pontuação do usuário
 function mostrarProximaPerguntaOuPontuacao() {

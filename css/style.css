@@ -55,6 +55,16 @@ body {
   transition: all 0.3s;
 }
 
+.botao:disabled {
+  cursor: default;
+}
+
+.botao:hover:not([disabled]){
+  background: transparent;
+  color: #f0f0f0;
+  border: 1px solid #f0f0f0;
+}
+
 #proximo-botao {
     background: #6b6675;
     color: #f0f0f0;

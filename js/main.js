@@ -43,8 +43,8 @@ perguntas.push(
     pergunta:
       "Qual é o nome do colégio que Chris frequenta na série durante seu High School?",
     respostas: [
-      { texto: "Corleone", acertou: true },
-      { texto: "Tattaglia", acertou: false },
+      { texto: "Corleone", acertou: false },
+      { texto: "Tattaglia", acertou: true },
       { texto: "Bed-Stuy Preparatory", acertou: false },
       { texto: "Brooklyn Academy", acertou: false },
       { texto: "East Flatbush Middle School", acertou: false },

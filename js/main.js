@@ -4,6 +4,7 @@ let pontuacao = 0;
 const elementoPergunta = document.getElementById("pergunta");
 const botoesResposta = document.getElementById("botoes-resposta");
 const botaoProximo = document.getElementById("proximo-botao");
+const quizName = document.querySelector(".quiz-name");
 
 // ===== Adicionar perguntas =====
 // adiciona um objeto contendo as keys 'pergunta' e 'respostas' a lista de perguntas
@@ -67,6 +68,7 @@ function iniciarQuestionario() {
   indicePerguntaAtual = 0;
   pontuacao = 0;
   botaoProximo.innerHTML = "Próximo";
+  quizName.style.display = "block";
   mostrarPergunta(
     perguntas,
     indicePerguntaAtual,
@@ -110,8 +112,19 @@ function mostrarPergunta(
 function mostrarPontuacao(elementoPergunta, botaoProximo) {
   // esconde os botoes de resposta e botão de próximo
   resetarEstado(botoesResposta, botaoProximo);
+
   // mostra a pontuação
-  elementoPergunta.innerHTML = `Sua pontuação foi ${pontuacao} de ${perguntas.length}!`;
+  if (pontuacao === perguntas.length) {
+    elementoPergunta.innerHTML = `Parabéns! Você acertou todas as perguntas!`;
+  } else {
+    elementoPergunta.innerHTML = `Você Errou! Sua pontuação foi ${pontuacao} de ${perguntas.length}!`;
+  }
+  // centraliza o texto
+  elementoPergunta.classList.add("center-text");
+
+  // esconde o titulo/nome do quiz
+  quizName.style.display = "none";
+
   // muda o texto do botão de próximo
   botaoProximo.innerHTML = "Jogar novamente";
   botaoProximo.style.display = "block";
@@ -121,6 +134,7 @@ function mostrarPontuacao(elementoPergunta, botaoProximo) {
 // Esconde o botão de próximo e reseta os botoes de resposta
 function resetarEstado(botoesResposta, botaoProximo) {
   botaoProximo.style.display = "none";
+
   while (botoesResposta.firstChild) {
     botoesResposta.removeChild(botoesResposta.firstChild);
   }
@@ -131,6 +145,7 @@ function resetarEstado(botoesResposta, botaoProximo) {
 function selecionarResposta(e, botoesResposta, botaoProximo) {
   const botaoSelecionado = e.target;
   const isCorreto = botaoSelecionado.dataset.acertou === "true";
+
   if (isCorreto) {
     botaoSelecionado.classList.add("acertou");
     pontuacao++;
@@ -148,7 +163,6 @@ function selecionarResposta(e, botoesResposta, botaoProximo) {
   });
   botaoProximo.style.display = "block";
 }
-
 
 // vai para a proxima pergunta ou mostra a pontuação do usuário
 function mostrarProximaPerguntaOuPontuacao() {
